@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import testSketch from './testSketch';
+import { Sketch } from './components/sketch';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: 0 };
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+      <div style={{ width: '100%', height: '100%' }} onClick={() => { this.setState({ value: (this.state.value + 5) % 256 }) }}>
+        <p>
+          A simple demonstration of how this component wrapper for p5 works. See <a href='https://github.com/JobLeonard/p5-react'>source code on github</a> for more information.
         </p>
+        <Sketch
+          sketch={testSketch}
+          width={'80%'}
+          height={'80%'}
+          sketchProps={{ value: this.state.value }}
+        />
+        <p>
+          Click to change current value being passed as a prop to the sketch: {this.state.value}
+        </p>
+
       </div>
     );
   }

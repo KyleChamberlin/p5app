@@ -17,8 +17,8 @@ class App extends Component {
         </p>
         <Sketch
           sketch={testSketch}
-          width={'80%'}
-          height={'80%'}
+          width={256}
+          height={256}
           sketchProps={{ value: this.state.value }}
         />
         <p>

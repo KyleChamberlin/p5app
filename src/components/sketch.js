@@ -78,9 +78,9 @@ class SketchComponent extends PureComponent {
 		const { props } = this;
 		let style = Object.assign({}, props.style);
 		let { width, height } = props;
-		switch (typeof height) {
+		switch (typeof width) {
 			case 'number':
-				width = width | 0;
+				width = width | 128;
 				style.width = width;
 				style.minWidth = width;
 				style.maxWidth = width;
@@ -96,7 +96,7 @@ class SketchComponent extends PureComponent {
 		}
 		switch (typeof height) {
 			case 'number':
-				height = height | 0;
+				height = height | 128;
 				style.height = height;
 				style.minHeight = height;
 				style.maxHeight = height;

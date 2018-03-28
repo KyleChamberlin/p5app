@@ -23,8 +23,8 @@ class SketchComponent extends PureComponent {
 	mountedView(view) {
 		if (view) {
 			const ratio = window.devicePixelRatio || 1;
-			const width = (view.clientWidth * ratio) | 0;
-			const height = (view.clientHeight * ratio) | 0;
+			const width = (view.clientWidth * ratio);
+			const height = (view.clientHeight * ratio);
 			let newState = { view, width, height, ratio };
 			let { sketch, sketchProps, noCanvas } = this.props;
 			if (sketch) {
